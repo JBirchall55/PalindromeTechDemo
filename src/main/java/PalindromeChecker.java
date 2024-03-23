@@ -4,7 +4,7 @@ public class PalindromeChecker {
         if(word == null) {
             return false;
         } else {
-            return word.equals(new StringBuilder(word).reverse().toString());
+            return word.toLowerCase().equals(new StringBuilder(word.toLowerCase()).reverse().toString());
         }
     }
 
