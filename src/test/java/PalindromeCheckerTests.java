@@ -26,4 +26,11 @@ public class PalindromeCheckerTests {
         assertFalse(checker.isPalindrome(null));
     }
 
+    @Test
+    @DisplayName("isPalindrome returns false for empty string")
+    public void testIsPalindromeReturnsFalseForEmptyString() {
+        PalindromeChecker checker = new PalindromeChecker();
+        assertFalse(checker.isPalindrome(""));
+    }
+
 }
