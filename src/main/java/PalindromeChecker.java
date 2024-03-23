@@ -1,6 +1,6 @@
 public class PalindromeChecker {
 
-    private boolean isPalindrome(String word) {
+    boolean isPalindrome(String word) {
         if(word == null) {
             return false;
         } else {
