@@ -35,4 +35,19 @@ public class PalindromeCheckerTests {
         Assertions.assertEquals(false, checker.isPalindrome(""));
     }
 
+    @Test
+    @DisplayName("isPalindrome returns true for palindrome with spaces")
+    public void testIsPalindromeReturnsTrueForPalindromeWithSpaces() {
+        PalindromeChecker checker = new PalindromeChecker();
+        Assertions.assertEquals(true, checker.isPalindrome("race car"));
+    }
+
+    @Test
+    @DisplayName("isPalindrome returns false for palindrome with non-alphabetic characters")
+    public void testIsPalindromeReturnsFalseForPalindromeWithNonAlphabeticCharacters() {
+        PalindromeChecker checker = new PalindromeChecker();
+        Assertions.assertEquals(false, checker.isPalindrome("racecar!"));
+    }
+
+
 }
