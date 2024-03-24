@@ -2,21 +2,25 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.Assert.*;
 
 public class PalindromeCheckerTests {
     
-    @Test
-    @DisplayName("isPalindrome returns true for palindrome")
-    public void testIsPalindromeReturnsTrueForPalindrome() {
+    @ParameterizedTest
+    @DisplayName("isPalindrome returns true for palindromes")
+    @ValueSource(strings = {"racecar", "radar", "level", "rotor", "madam", "refer", "deified", "civic", "reviver", "rotator", "repaper", "detartrated", "redivider", "aibohphobia"})
+    public void testIsPalindromeReturnsTrueForPalindromes() {
         PalindromeChecker checker = new PalindromeChecker();
         Assertions.assertEquals(true, checker.isPalindrome("racecar"));
     }
 
-    @Test
-    @DisplayName("isPalindrome returns false for non-palindrome")
-    public void testIsPalindromeReturnsFalseForNonPalindrome() {
+    @ParameterizedTest
+    @DisplayName("isPalindrome returns false for non-palindromes")
+    @ValueSource(strings = {"hello", "world", "java", "programming", "is", "fun"})
+    public void testIsPalindromeReturnsFalseForNonPalindromes() {
         PalindromeChecker checker = new PalindromeChecker();
         Assertions.assertEquals(false, checker.isPalindrome("hello"));
     }
